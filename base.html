@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}PocketSmart AI{% endblock %}</title><link rel="stylesheet" href="/static/styles.css"><script defer src="/static/app.js"></script></head>
+<body><header class="topbar"><a class="brand" href="/"><span class="brand-mark">P</span>PocketSmart <span class="ai">AI</span></a><nav><a href="/">Home</a>
+{% if user %}<a href="/dashboard">Dashboard</a><a href="/history">History</a><span class="welcome">Hi, {{ user.username }}</span><form class="inline" action="/logout" method="post"><button class="nav-button">Log out</button></form>
+{% else %}<a href="/login">Log in</a><a class="nav-cta" href="/register">Create account</a>{% endif %}</nav></header>
+<main class="container">{% block content %}{% endblock %}</main>
+<footer><div><strong>PocketSmart AI</strong><p>Plan thoughtfully. Spend confidently.</p></div><small>Estimates are illustrative. Confirm prices and availability with sellers.</small></footer></body></html>
